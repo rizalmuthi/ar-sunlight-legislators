@@ -8,3 +8,7 @@ To get started:
 3. Install the necessary dependencies using Bundler: `$ bundle`
 4. Create your database: `$ rake db:create`
 5. Implement the objectives as described in the challenge in Socrates.
+
+
+
+THIS IS CODE DIVISION Bootcamp programs
