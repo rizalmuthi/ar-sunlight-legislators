@@ -1,0 +1,2 @@
+class Delegate < Legislator
+end
