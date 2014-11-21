@@ -3,7 +3,8 @@ require_relative 'app/models/senator'
 require_relative 'app/models/delegate'
 require_relative 'app/models/representative'
 require_relative 'app/models/commissioner'
-
+require_relative 'app/models/tweet'
+require_relative 'lib/sunlight_legislators_twitter'
 
 def print_legislator_by_state(state)
   puts "State: #{state}"
@@ -45,13 +46,15 @@ def print_legislator_by_state_and_active
   end
 end
 
-puts "Total legislators: #{Legislator.count}"
-count_legislator_by_gender("M")
-print_legislator_by_state("CA")
-count_legislator
-print_legislator_by_state_and_active
+# puts "Total legislators: #{Legislator.count}"
+# count_legislator_by_gender("M")
+# print_legislator_by_state("CA")
+# count_legislator
+# print_legislator_by_state_and_active
 
-puts Senator.count
-puts Delegate.count
-puts Representative.count
-puts Commissioner.count
+# puts Senator.count
+# puts Delegate.count
+# puts Representative.count
+# puts Commissioner.count
+
+SunlightLegislatorsTwitter.get_last_ten_tweets(1)
