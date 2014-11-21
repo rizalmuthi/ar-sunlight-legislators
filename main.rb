@@ -1,4 +1,9 @@
 require_relative 'app/models/legislator'
+require_relative 'app/models/senator'
+require_relative 'app/models/delegate'
+require_relative 'app/models/representative'
+require_relative 'app/models/commissioner'
+
 
 def print_legislator_by_state(state)
   puts "State: #{state}"
@@ -46,3 +51,7 @@ print_legislator_by_state("CA")
 count_legislator
 print_legislator_by_state_and_active
 
+puts Senator.count
+puts Delegate.count
+puts Representative.count
+puts Commissioner.count
