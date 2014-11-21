@@ -38,6 +38,22 @@ task "db:seed" do
   SunlightLegislatorsImporter.import(File.dirname(__FILE__) + "/db/data/legislators.csv")
 end
 
+desc "Move to Single Table Inheritance"
+task "set_type" do
+    Legislator.all.each do |legislator|
+    if legislator.title == "Rep"
+      legislator.type = "Representative"
+    elsif legislator.title == "Sen"
+      legislator.type = "Senator"
+    elsif legislator.title == "Del"
+      legislator.type = "Delegate"
+    elsif legislator.title == "Com"
+      legislator.type = "Commissioner"
+    end
+    legislator.save
+  end
+end
+
 task :console do
   exec "irb -r./main.rb"
 end
